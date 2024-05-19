@@ -1,18 +1,18 @@
-import List from "@mui/material/List"
-import ListItem from "@mui/material/ListItem"
-import ListItemButton from "@mui/material/ListItemButton"
-import ListItemIcon from "@mui/material/ListItemIcon"
-import ListItemText from "@mui/material/ListItemText"
-import DashboardCustomizeIcon from "@mui/icons-material/DashboardCustomize"
-import AttachMoneyIcon from "@mui/icons-material/AttachMoney"
-import InventoryIcon from "@mui/icons-material/Inventory"
-import StoreIcon from "@mui/icons-material/Store"
-import StarsIcon from "@mui/icons-material/Stars"
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart"
-import { useNavigate } from "react-router-dom"
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import ListItemText from "@mui/material/ListItemText";
+import DashboardCustomizeIcon from "@mui/icons-material/DashboardCustomize";
+import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
+import InventoryIcon from "@mui/icons-material/Inventory";
+import StoreIcon from "@mui/icons-material/Store";
+import StarsIcon from "@mui/icons-material/Stars";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import { useNavigate } from "react-router-dom";
 
 const MenuListComp = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const icons = [
     {
@@ -45,7 +45,7 @@ const MenuListComp = () => {
       iconName: <InventoryIcon />,
       path: "/stock/products/",
     },
-  ]
+  ];
 
   return (
     <div>
@@ -58,8 +58,8 @@ const MenuListComp = () => {
             sx={{
               color: "white",
               "& .MuiSvgIcon-root": { color: "white" },
-              "&:hover": { color: "red" },
-              "&:hover .MuiSvgIcon-root": { color: "red" },
+              "&:hover": { backgroundColor: "#4a148c" },
+              "&:hover .MuiSvgIcon-root": { color: "#4a148c" },
             }}
           >
             <ListItemButton>
@@ -70,7 +70,7 @@ const MenuListComp = () => {
         ))}
       </List>
     </div>
-  )
-}
+  );
+};
 
-export default MenuListComp
+export default MenuListComp;

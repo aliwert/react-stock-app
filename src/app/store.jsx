@@ -12,8 +12,7 @@ import {
   PURGE,
   REGISTER,
 } from "redux-persist"
-import storage from "redux-persist/lib/storage" //? defaults to localStorage
-// import storage from "redux-persist/lib/storage/session" //? session storage
+import storage from "redux-persist/lib/storage" 
 
 const persistConfig = {
   key: "root",
