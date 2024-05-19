@@ -45,7 +45,14 @@ const Firms = () => {
         Firms
       </Typography>
 
-      <Button variant="contained" onClick={handleOpen} disabled={error}>
+      <Button
+        variant="contained"
+        onClick={handleOpen}
+        disabled={error}
+        sx={{
+          "&:hover": { backgroundColor: "#4a148c", color: "red" },
+        }}
+      >
         New Firm
       </Button>
 
