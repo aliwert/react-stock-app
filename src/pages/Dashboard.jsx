@@ -1,44 +1,44 @@
-import * as React from "react"
-import AppBar from "@mui/material/AppBar"
-import Box from "@mui/material/Box"
-import CssBaseline from "@mui/material/CssBaseline"
-import Divider from "@mui/material/Divider"
-import Drawer from "@mui/material/Drawer"
-import IconButton from "@mui/material/IconButton"
+import * as React from "react";
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import CssBaseline from "@mui/material/CssBaseline";
+import Divider from "@mui/material/Divider";
+import Drawer from "@mui/material/Drawer";
+import IconButton from "@mui/material/IconButton";
 
-import MenuIcon from "@mui/icons-material/Menu"
-import Toolbar from "@mui/material/Toolbar"
-import Typography from "@mui/material/Typography"
-import Button from "@mui/material/Button"
-import { useSelector } from "react-redux"
-import useApiRequest from "../services/useApiRequest"
-import MenuListComp from "../components/MenuListComp"
-import { Outlet } from "react-router-dom"
+import MenuIcon from "@mui/icons-material/Menu";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import Button from "@mui/material/Button";
+import { useSelector } from "react-redux";
+import useApiRequest from "../services/useApiRequest";
+import MenuListComp from "../components/MenuListComp";
+import { Outlet } from "react-router-dom";
 
-const drawerWidth = 200
+const drawerWidth = 200;
 
 function Dashboard(props) {
-  const { window } = props
-  const [mobileOpen, setMobileOpen] = React.useState(false)
-  const [isClosing, setIsClosing] = React.useState(false)
+  const { window } = props;
+  const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [isClosing, setIsClosing] = React.useState(false);
 
-  const { user } = useSelector((state) => state.auth)
-  const { logout } = useApiRequest()
+  const { user } = useSelector((state) => state.auth);
+  const { logout } = useApiRequest();
 
   const handleDrawerClose = () => {
-    setIsClosing(true)
-    setMobileOpen(false)
-  }
+    setIsClosing(true);
+    setMobileOpen(false);
+  };
 
   const handleDrawerTransitionEnd = () => {
-    setIsClosing(false)
-  }
+    setIsClosing(false);
+  };
 
   const handleDrawerToggle = () => {
     if (!isClosing) {
-      setMobileOpen(!mobileOpen)
+      setMobileOpen(!mobileOpen);
     }
-  }
+  };
 
   const drawer = (
     <div>
@@ -46,11 +46,10 @@ function Dashboard(props) {
       <Divider />
       <MenuListComp />
     </div>
-  )
-
+  );
 
   const container =
-    window !== undefined ? () => window().document.body : undefined
+    window !== undefined ? () => window().document.body : undefined;
 
   return (
     <Box sx={{ display: "flex" }}>
@@ -77,7 +76,13 @@ function Dashboard(props) {
             Stock App
           </Typography>
           {user && (
-            <Button color="inherit" onClick={logout}>
+            <Button
+              color="inherit"
+              onClick={logout}
+              sx={{
+                "&:hover": { backgroundColor: "#4a148c", color: "red" },
+              }}
+            >
               Logout
             </Button>
           )}
@@ -88,7 +93,6 @@ function Dashboard(props) {
         sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
         aria-label="mailbox folders"
       >
-       
         <Drawer
           container={container}
           variant="temporary"
@@ -136,7 +140,7 @@ function Dashboard(props) {
         <Outlet />
       </Box>
     </Box>
-  )
+  );
 }
 
-export default Dashboard
+export default Dashboard;
