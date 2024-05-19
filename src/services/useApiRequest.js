@@ -21,11 +21,11 @@ const useApiRequest = () => {
     try {
       const { data } = await axiosPublic.post("/auth/login/", userData);
       dispatch(loginSuccess(data));
-      toastSuccessNotify("Login işlemi başarılı");
+      toastSuccessNotify("Login successful");
       navigate("/stock");
     } catch (error) {
       dispatch(fetchFail());
-      toastErrorNotify("Login başarısız oldu");
+      toastErrorNotify("Login unsuccessful");
       console.log(error);
     }
   };
