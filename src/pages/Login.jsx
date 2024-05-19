@@ -42,7 +42,12 @@ const Login = () => {
         }}
       >
         <Grid item xs={12} mb={3}>
-          <Typography variant="h3" color="primary" align="center">
+          <Typography
+            variant="h3"
+            color="danger"
+            align="center"
+            sx={{ color: "#b71c1c" }}
+          >
             STOCK APP
           </Typography>
         </Grid>
@@ -114,7 +119,7 @@ const Login = () => {
                     variant="contained"
                     type="submit"
                     disabled={isSubmitting}
-                    sx={{ backgroundColor: 'red', color: 'white' }}
+                    sx={{ backgroundColor: "red", color: "white" }}
                   >
                     Submit
                   </Button>
@@ -123,7 +128,7 @@ const Login = () => {
             )}
           </Formik>
 
-          <Box sx={{ textAlign: "center", mt: 2 }}>
+          <Box sx={{ textAlign: "center", mt: 4 }}>
             <Link to="/register">Do you have not an account?</Link>
           </Box>
         </Grid>
